@@ -13,7 +13,7 @@
         </ul>
       </div>
     </nav>
-
+    
 
     <router-view />
   </div>
@@ -23,6 +23,7 @@
 import { useGestionStore} from '@/stores'
 
 const store = useGestionStore()
+import Projet from './components/projets/Projet.vue'
 
 </script>
 

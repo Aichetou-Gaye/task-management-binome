@@ -13,9 +13,8 @@ import ModifierTache from "@/components/taches/ModifierTache.vue";
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/projet", component: Projet },
   { path: "/addProjet", component: AddProjet },
-  { path: "/listProjet", component: ListeProjet },
+  { path: "/projet", component: ListeProjet },
   { path: "/editProjet", component: EditProjet },
   { path: "/tache", component: Tache },
   { path: "/ajouTache", component: AjoutTache },
