@@ -18,22 +18,28 @@
         <button type="submit" class="btn mt-4 btn-primary">
           Ajouter
         </button>
+        <router-link to="/listProjet" class="btn mt-4 btn-primary">Fermer</router-link>
       </div>
     </form>
   </div>
 </template>
 
 <script setup>
+import { useGestionStore } from '@/stores'
 import { ref } from "vue";
+
+const store = useGestionStore()
 
 const nom = ref("")
 const debut = ref("")
 const fin = ref("")
 
 const onSubmit = () => {
-  
+  store.addProjet(nom, debut, fin)
+
   nom.value = "";
   debut.value = "";
   fin.value = "";
 }
+
 </script>
