@@ -1,10 +1,14 @@
+<template>
+ 
+</template>
+
 <script setup>
-import Taches from './components/Taches.vue'
+import { useGestionStore} from '@/stores'
+
+const store = useGestionStore()
+
 </script>
 
-<template>
- <Taches />
-</template>
 
 <style scoped>
 
