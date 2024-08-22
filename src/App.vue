@@ -1,9 +1,9 @@
 <script setup>
-import Taches from './components/Taches.vue'
+import Tache from './components/taches/Tache.vue'
 </script>
 
 <template>
- <Taches />
+ <Tache />
 </template>
 
 <style scoped>
