@@ -3,26 +3,25 @@
     <table class="table table-bordered table-sm">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Prénom</th>
+          <th scope="col">Index</th>
+          <th scope="col">Id Projet</th>
           <th scope="col">Nom</th>
-          <th scope="col">Date d'inscription</th>
-          <th scope="col">Téléphone</th>
+          <th scope="col">Date de début</th>
+          <th scope="col">Date de fin</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(membre, index) in membres" :key="index">
+        <tr v-for="(projet, index) in store.projets" :key="index">
           <td>{{ index + 1 }}</td>
-          <td>{{ membre.prenom }}</td>
-          <td>{{ membre.nom }}</td>
-          <td>{{ membre.dateInscription }}</td>
-          <td>{{ membre.telephone }}</td>
-
+          <td>{{ projet.id }}</td>
+          <td>{{ projet.nom }}</td>
+          <td>{{ projet.debut }}</td>
+          <td>{{ projet.fin }}</td>
           <td>
             <button class="btn btn-xs btn-danger" @click="destroy(index)"><ion-icon name="trash"></ion-icon></button>
             <button class="btn btn-xs btn-primary" @click="edit(index)"><ion-icon name="eyedrop"></ion-icon></button>
-            <button class="btn btn-xs btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="view(membre)"><ion-icon
+            <button class="btn btn-xs btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="view(projet)"><ion-icon
                 name="eye"></ion-icon></button>
           </td>
         </tr>
@@ -33,14 +32,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title text-danger" id="exampleModalLabel">Informations du membre</h5>
+            <h5 class="modal-title text-danger" id="exampleModalLabel">Informations du projet</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Prénom : {{ membreShow?.prenom }}</p>
-            <p>Nom : {{ membreShow?.nom }}</p>
-            <p>Date d'inscription : {{ membreShow?.dateInscription }}</p>
-            <p>N° téléphone : {{ membreShow?.telephone }}</p>
+            <p>Nom : {{ pShow?.nom }}</p>
+            <p>Date de debut: {{ pShow?.debut }}</p>
+            <p>Date de fin : {{ pShow?.fin }}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
@@ -51,6 +49,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { useGestionStore } from '@/stores'
+const store = useGestionStore()
 
+const destroy = (index) => {}
+const edit = (index) => {}
+const view = (projet) => {}
 </script>
