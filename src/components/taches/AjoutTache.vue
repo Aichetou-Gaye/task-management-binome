@@ -19,6 +19,15 @@
         <label for="date">Date de fin</label>
         <input type="Date" class="form-control" id="date_fin" v-model="dateFin" required />
       </div>
+       
+         <div class="col-sm-2">
+      <select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+ </div>
 
       <div class="col-auto">
         <button type="submit" class="btn mt-4 btn-primary">

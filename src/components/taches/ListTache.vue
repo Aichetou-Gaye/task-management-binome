@@ -37,10 +37,10 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Prénom : {{ membreShow?.prenom }}</p>
-            <p>Nom : {{ membreShow?.nom }}</p>
-            <p>Date d'inscription : {{ membreShow?.dateInscription }}</p>
-            <p>N° téléphone : {{ membreShow?.telephone }}</p>
+            <p>Nom : {{ tacheShow?.nom }}</p>
+            <p>Description : {{ tacheShow?.description }}</p>
+            <p>Date de début : {{ tacheShow?.dateDebut }}</p>
+            <p>Date de fin : {{ tacheShow?.dateFin }}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
