@@ -4,16 +4,10 @@ export const useGestionStore = defineStore('gestion', {
   state: () => ({
     taches: [],
     projets: [],
-    selected: null,
-    project : null,
   }),
   actions: {
     addProjet(objet) {
       this.projets.push(objet)
-    },
-    editProjet(id) {
-      this.selected = this.projets[id]
-       
     },
     delProjet(id) {
       this.projets.splice(id, 1)
@@ -24,8 +18,8 @@ export const useGestionStore = defineStore('gestion', {
         this.projets[index] = update;
       }
     },
-    view(projet) {
-      this.project = projet
-    }
+    // viewProjet(projet) {
+    //   this.projets = projet
+    // }
   },
 })

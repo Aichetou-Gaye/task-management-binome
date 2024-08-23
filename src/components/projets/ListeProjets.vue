@@ -4,7 +4,6 @@
         <table class="table table-bordered table-sm">
             <thead>
                 <tr>
-                    <th scope="col">Index</th>
                     <th scope="col">Id Projet</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Date de début</th>
@@ -14,7 +13,6 @@
             </thead>
             <tbody>
                 <tr v-for="(projet, index) in store.projets" :key="index">
-                    <td>{{ index + 1 }}</td>
                     <td>{{ projet.id }}</td>
                     <td>{{ projet.nom }}</td>
                     <td>{{ projet.debut }}</td>
@@ -22,8 +20,8 @@
                     <td>
                         <button class="btn btn-xs btn-danger" @click="destroy(index)"><ion-icon
                                 name="trash"></ion-icon></button>
-                        <button class="btn btn-xs btn-primary" @click="edit(index)"><ion-icon
-                                name="eyedrop"></ion-icon></button>
+                        <router-link to="/editProjet" class="btn btn-xs btn-primary" @click="edit(index)"><ion-icon
+                                name="eyedrop"></ion-icon></router-link>
                         <button class="btn btn-xs btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             @click="view(projet)"><ion-icon name="eye"></ion-icon></button>
                     </td>
@@ -39,12 +37,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Nom : {{ pShow?.nom }}</p>
-                        <p>Date de debut: {{ pShow?.debut }}</p>
-                        <p>Date de fin : {{ pShow?.fin }}</p>
+                        <p>Nom : {{ show?.nom }}</p>
+                        <p>Date de debut: {{ show?.debut }}</p>
+                        <p>Date de fin : {{ show?.fin }}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -56,14 +54,24 @@
 import { useGestionStore } from '@/stores'
 const store = useGestionStore()
 import Projet from './Projet.vue'
+import { ref } from 'vue';
 
 const destroy = (index) => {
-    store.destroy(index)
+    store.delProjet(index)
 }
 const edit = (index) => {
-    store.edit(index)
+    store.editProjet(index)
 }
+const show = ref(null)
+
 const view = (projet) => {
-    store.view(projet)
+    show.value = projet
 }
+
 </script>
+
+<style>
+.btn-xs{
+    margin: 5px;
+}
+</style>
