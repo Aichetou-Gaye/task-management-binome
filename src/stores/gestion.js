@@ -10,7 +10,6 @@ export const useGestionStore = defineStore('gestion', {
     tacheShow: null,       
   }),
   actions: {
-    // Gestion des projets
     addProjet(objet) {
       this.projets.push(objet);
     },
@@ -18,7 +17,7 @@ export const useGestionStore = defineStore('gestion', {
       this.projets.splice(id, 1);
     },
     updateProjet(update) {
-      const index = this.projets.findIndex(projet => projet.id === this.selected.id);
+      const index = this.projets.findIndex(projet => projet.id === update.id);
       if (index !== -1) {
         this.projets[index] = update;
       }
@@ -26,28 +25,17 @@ export const useGestionStore = defineStore('gestion', {
     view(projet) {
       this.project = projet;
     },
-    
-    // Gestion des tâches
     addTache(objet) {
       this.taches.push(objet);
     },
-    editTache(id) {
-      this.selectedTache = this.taches.find(tache => tache.id === id);
-    },
     delTache(id) {
-      const index = this.taches.findIndex(tache => tache.id === id);
-      if (index !== -1) {
-        this.taches.splice(index, 1);
-      }
+      this.taches.splice(id, 1);
     },
     updateTache(id, updatedTache) {
       const index = this.taches.findIndex(tache => tache.id === id);
       if (index !== -1) {
         this.taches[index] = updatedTache;
       }
-    },
-    view(tache) {
-      this.tacheShow = tache;
     },
     getTacheById(id) {
       return this.taches.find(tache => tache.id === id);
