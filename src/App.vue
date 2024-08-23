@@ -1,7 +1,9 @@
 <template>
- <div class="container-fluid p-0">
+  <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-primary mb-4">
-      <a class="navbar-brand text-white ms-3" href="#"><img src="./assets/logo.png" alt="Logo"></a>
+      <a class="navbar-brand text-white ms-3" href="#">
+        <img src="@/assets/logo.png" alt="Logo" />
+      </a>
       <div class="collapse navbar-collapse d-flex justify-content-evenly">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -14,27 +16,25 @@
       </div>
     </nav>
     
-
     <router-view />
   </div>
 </template>
 
 <script setup>
-import { useGestionStore} from '@/stores'
+import { useGestionStore } from '@/stores';
 
-const store = useGestionStore()
-import Projet from './components/projets/Projet.vue'
-
+const store = useGestionStore();
 </script>
-
 
 <style scoped>
 .navbar {
   background-color: #d4c4e4;
 }
-.nav-link{
+
+.nav-link {
   font-weight: 700;
 }
+
 img {
   width: 100px;
 }

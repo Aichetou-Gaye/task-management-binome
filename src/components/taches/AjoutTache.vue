@@ -17,26 +17,26 @@
         <input
           type="text"
           class="form-control"
-          id="Description"
+          id="description"
           v-model="description"
           required
         />
       </div>
       <div class="col-sm-2">
-        <label for="date">Date de début</label>
+        <label for="date_debut">Date de début</label>
         <input
           type="date"
           class="form-control"
-          id="date"
+          id="date_debut"
           v-model="dateDebut"
           required
         />
       </div>
 
       <div class="col-sm-2">
-        <label for="date">Date de fin</label>
+        <label for="date_fin">Date de fin</label>
         <input
-          type="Date"
+          type="date"
           class="form-control"
           id="date_fin"
           v-model="dateFin"
@@ -45,11 +45,17 @@
       </div>
 
       <div class="col-sm-2">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <label for="projet">Projet</label>
+        <select 
+          class="form-select" 
+          id="projet" 
+          v-model="projet" 
+          required
+        >
+          <option >Sélectionnez un projet</option>
+          <option v-for="projet in projets" :key="projet.id" :value="projet.nom">
+            {{ projet.nom }}
+          </option>
         </select>
       </div>
 
@@ -59,25 +65,43 @@
     </form>
   </div>
 </template>
+
 <script setup>
-// import { ref, defineExpose } from "vue";
-import { useGestionStore } from "@/stores";
 import { ref } from "vue";
+import { useGestionStore } from "@/stores";
 
 const store = useGestionStore();
 
+// const id = ref(1)
 const nom = ref("");
 const description = ref("");
 const dateDebut = ref("");
 const dateFin = ref("");
+const projet = ref("");
+
+const projets = ref([
+  { id: 1, nom: "Projet A" },
+  { id: 2, nom: "Projet B" },
+  { id: 3, nom: "Projet C" },
+  // Ajoutez ici les projets existants
+]);
 
 const onSubmit = () => {
-  store.addTache(nom, description, dateDebut, dateFin);
+  // Passer les valeurs au lieu des références
+  store.addTache({
+    // id: id.value++,
+  nom: nom.value, 
+  description: description.value, 
+  dateDebut: dateDebut.value,
+   dateFin: dateFin.value, 
+   projet: projet.value});
 
+  // Réinitialiser les champs du formulaire
   nom.value = "";
   description.value = "";
   dateDebut.value = "";
   dateFin.value = "";
+  projet.value = "";
 };
 </script>
 
