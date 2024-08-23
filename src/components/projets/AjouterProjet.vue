@@ -18,7 +18,7 @@
         <button type="submit" class="btn mt-4 btn-primary">
           Ajouter
         </button>
-        <router-link to="/listProjet" class="btn mt-4 btn-primary">Fermer</router-link>
+        <router-link to="/projet" class="btn mt-4 btn-primary">Fermer</router-link>
       </div>
     </form>
   </div>
@@ -30,12 +30,18 @@ import { ref } from "vue";
 
 const store = useGestionStore()
 
+const id = ref(0)
 const nom = ref("")
 const debut = ref("")
 const fin = ref("")
 
 const onSubmit = () => {
-  store.addProjet(nom, debut, fin)
+  store.addProjet({
+    id: id.value++,
+    nom: nom.value,
+    debut: debut.value,
+    fin: fin.value,
+  })
 
   nom.value = "";
   debut.value = "";

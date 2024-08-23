@@ -6,16 +6,10 @@ export const useGestionStore = defineStore('gestion', {
     projets: [],
     selected: null,
     project : null,
-    id : 1
   }),
   actions: {
-    addProjet(nom, debut, fin) {
-      this.projets.push({
-        id: this.id++,
-        nom: nom,
-        debut: debut,
-        fin: fin,
-      })
+    addProjet(objet) {
+      this.projets.push(objet)
     },
     editProjet(id) {
       this.selected = this.projets[id]
