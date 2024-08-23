@@ -87,7 +87,7 @@ const projets = ref([
 ]);
 
 const onSubmit = () => {
-  // Passer les valeurs au lieu des références
+ 
   store.addTache({
     // id: id.value++,
   nom: nom.value, 

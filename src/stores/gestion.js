@@ -14,9 +14,6 @@ export const useGestionStore = defineStore('gestion', {
     addProjet(objet) {
       this.projets.push(objet);
     },
-    editProjet(id) {
-      this.selected = this.projets[id];
-    },
     delProjet(id) {
       this.projets.splice(id, 1);
     },

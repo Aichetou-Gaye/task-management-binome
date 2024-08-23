@@ -1,24 +1,24 @@
 <template>
      <div class="container">
-    <h4>Ajoutez un projet : </h4>
-    <form class="row gx-3 gy-2 align-items-center" @submit.prevent="onSubmit">
-      <div class="col-sm-3">
+    <h4 class="text-center mb-4">Ajoutez un projet : </h4>
+    <form class="row align-items-center" @submit.prevent="onSubmit">
+      <div class="mb-3">
         <label for="nom">Nom</label>
         <input type="text" class="form-control" id="nom" v-model="nom" required />
       </div>
-      <div class="col-sm-2">
+      <div class="mb-3">
         <label for="date">Date de début</label>
         <input type="date" class="form-control" id="date" v-model="debut" required />
       </div>
-      <div class="col-sm-2">
+      <div class="mb-3">
         <label for="date">Date de fin</label>
         <input type="date" class="form-control" id="date" v-model="fin" required />
       </div>
-      <div class="col-auto">
-        <button type="submit" class="btn mt-4 btn-primary">
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success">
           Ajouter
         </button>
-        <router-link to="/projet" class="btn mt-4 btn-primary">Fermer</router-link>
+        <router-link to="/projet" class="btn btn-secondary">Fermer</router-link>
       </div>
     </form>
   </div>
@@ -30,7 +30,7 @@ import { ref } from "vue";
 
 const store = useGestionStore()
 
-const id = ref(0)
+const id = ref(1)
 const nom = ref("")
 const debut = ref("")
 const fin = ref("")
