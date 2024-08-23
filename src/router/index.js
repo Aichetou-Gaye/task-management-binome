@@ -16,9 +16,8 @@ const routes = [
   { path: "/addProjet", component: AddProjet },
   { path: "/projet", component: ListeProjet },
   { path: "/editProjet", component: EditProjet },
-  { path: "/tache", component: Tache },
+  { path: "/tache", component: ListTache },
   { path: "/ajouTache", component: AjoutTache },
-  { path: "/listeTache", component: ListTache },
   { path: "/modifierTache", component: ModifierTache }
 ];
 

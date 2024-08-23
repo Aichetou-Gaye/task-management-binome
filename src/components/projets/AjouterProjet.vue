@@ -1,5 +1,5 @@
 <template>
-     <div class="container">
+  <div class="container">
     <h4 class="text-center mb-4">Ajoutez un projet : </h4>
     <form class="row align-items-center" @submit.prevent="onSubmit">
       <div class="mb-3">
