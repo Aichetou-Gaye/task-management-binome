@@ -1,12 +1,16 @@
 <template>
-  <AjoutTache class="border-bottom pb-4" @on-add="add"/>
-  <ListTache />
+   <div class="container">
+        <h3>Gestion des Tâches  : </h3>
+        <router-link to="/ajouTache" >Ajouter</router-link>
+        <router-link to="/listeTache"></router-link>
+    </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
-import AjoutTache from './AjoutTache.vue';
-import ListTache from './ListTache.vue';
+
+import { useGestionStore} from '@/stores'
+
+const store = useGestionStore()
 </script>
 
 

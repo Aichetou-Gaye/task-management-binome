@@ -5,7 +5,7 @@
       <div class="collapse navbar-collapse d-flex justify-content-evenly">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link class="nav-link" to="/taches">Tâches</router-link>
+            <router-link class="nav-link" to="/tache">Tâches</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/projet">Projets</router-link>

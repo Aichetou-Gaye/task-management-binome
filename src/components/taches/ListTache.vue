@@ -4,10 +4,11 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">mon</th>
-          <th scope="col">description</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Description</th>
           <th scope="col">Date de début</th>
           <th scope="col">Date de fin</th>
+          <th scope="col">Id Tâche</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <td>{{ tache.description }}</td>
           <td>{{ tache.dateDebut }}</td>
           <td>{{ tache.dateFin }}</td>
+          <td>{{ tache.id }}</td>
 
           <td>
             <button class="btn btn-xs btn-danger" @click="destroy(index)"><ion-icon name="trash"></ion-icon></button>
@@ -52,6 +54,12 @@
 </template>
 
 <script setup>
+import { useGestionStore } from '@/stores'
+const store = useGestionStore()
+
+const destroy = (index) => {}
+const edit = (index) => {}
+const view = (tache) => {}
 </script>
 
 
