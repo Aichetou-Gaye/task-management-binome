@@ -23,11 +23,15 @@ Ce projet est une application web de gestion des tâches et des projets dévelop
 ## Installation
 
 ### Prérequis
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
 - Node.js (version 14.x ou supérieure)
 - Vue.js 3
 - NPM 
 - Bootstrap 5.x (inclus dans le projet)
 - PINIA
+- GIT/GITHUB
+- Un navigateur web moderne (comme Chrome, Firefox, ou Edge)
 
 ### Étapes d'installation
 
