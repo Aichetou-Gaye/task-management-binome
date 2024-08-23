@@ -20,7 +20,7 @@
                     <td>
                         <button class="btn btn-xs btn-danger" @click="destroy(index)"><ion-icon
                                 name="trash"></ion-icon></button>
-                        <router-link to="/editProjet" class="btn btn-xs btn-primary" @click="edit(index)"><ion-icon
+                        <router-link to="/editProjet" class="btn btn-xs btn-primary"><ion-icon
                                 name="eyedrop"></ion-icon></router-link>
                         <button class="btn btn-xs btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             @click="view(projet)"><ion-icon name="eye"></ion-icon></button>
@@ -58,9 +58,6 @@ import { ref } from 'vue';
 
 const destroy = (index) => {
     store.delProjet(index)
-}
-const edit = (index) => {
-    store.editProjet(index)
 }
 const show = ref(null)
 
