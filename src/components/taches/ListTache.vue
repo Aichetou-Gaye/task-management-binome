@@ -9,6 +9,7 @@
           <th scope="col">Description</th>
           <th scope="col">Date de début</th>
           <th scope="col">Date de fin</th>
+          <th scope="col">Nom du projet</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -19,7 +20,7 @@
           <td>{{ tache.description }}</td>
           <td>{{ tache.dateDebut }}</td>
           <td>{{ tache.dateFin }}</td>
-          <td>{{ tache.id }}</td>
+          <td>{{ tache.projet }}</td>
           <td>
             <button class="btn btn-xs btn-danger" @click="destroy(index)">
               <ion-icon name="trash"></ion-icon>

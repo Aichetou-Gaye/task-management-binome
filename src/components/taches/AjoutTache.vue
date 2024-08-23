@@ -23,7 +23,6 @@
       <div class="mb-3">
         <label for="projet">Projet</label>
         <select class="form-select" id="projet" v-model="projet" required>
-          <option>Sélectionnez un projet</option>
           <option v-for="projet in store.projets" :key="projet.id" :value="projet.nom">
             {{ projet.nom }}
           </option>
