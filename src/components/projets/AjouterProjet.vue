@@ -49,3 +49,10 @@ const onSubmit = () => {
 }
 
 </script>
+
+<style scoped>
+form {
+  width: 500px;
+  margin: auto;
+}
+</style>
